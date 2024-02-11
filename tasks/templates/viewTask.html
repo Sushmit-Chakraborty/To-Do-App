@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}View Tasks{% endblock %}
+
+{% block header %}View Tasks{% endblock %}
+{% block content %}
+{% for task in tasks %}
+    
+    <p>{{ task.task }}</p>
+    
+    <a href="{% url 'deleteTask' task.pk %}">Done</a>
+    
+{% endfor %}
+{% endblock %}

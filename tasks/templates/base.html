@@ -1,0 +1,75 @@
+<!-- base.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background-color: rgb(180, 114, 180);
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        header {
+            background-color: #4b0082; /* Indigo color for the header */
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+
+        nav {
+            background-color: #8a2be2; /* Blue Violet color for the navigation */
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px;
+            margin: 0 10px;
+            font-weight: bold;
+        }
+
+        #content {
+            background-color: #fff; /* White color for the content area */
+            padding: 20px;
+            margin: 20px;
+            border-radius: 10px;
+        }
+
+        footer {
+            background-color: #4b0082; /* Indigo color for the footer */
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+    <title>{% block title %}My Website{% endblock %}</title>
+</head>
+<body>
+    <header>
+        <h1>{% block header %}Welcome to My Website{% endblock %}</h1>
+    </header>
+    
+    <nav>
+        <a href="{% url 'viewTask' %}">Home</a>
+        <a href="{% url 'createTask' %}">Add Task</a>
+        <a href="{% url 'contact' %}">Contact</a>
+    </nav>
+    
+    <div id="content">
+        {% block content %}{% endblock %}
+    </div>
+    
+    <footer>
+         2024 To-do List
+    </footer>
+</body>
+</html>
